@@ -1,57 +1,56 @@
-// Xử lý chọn dịch vụ bằng cách click
-const serviceCards = document.querySelectorAll('.service-card');
-const selectedCountSpan = document.querySelector('#selected-count');
-const bookNowBtn = document.querySelector('#book-now-btn');
+// Mobile Menu Toggle
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-let selectedServices = 0;
-
-serviceCards.forEach(card => {
-    card.addEventListener('click', () => {
-        // Toggle class selected
-        card.classList.toggle('selected');
-        
-        // Cập nhật nút bấm
-        const btn = card.querySelector('.select-btn');
-        if (card.classList.contains('selected')) {
-            btn.textContent = 'Đã chọn';
-            selectedServices++;
-        } else {
-            btn.textContent = 'Chọn ngay';
-            selectedServices--;
-        }
-        
-        // Cập nhật số lượng hiển thị
-        selectedCountSpan.textContent = selectedServices;
-    });
-});
-
-// Nút gửi yêu cầu
-bookNowBtn.addEventListener('click', () => {
-    if (selectedServices > 0) {
-        alert(`Cảm ơn bạn! Bạn đã chọn ${selectedServices} dịch vụ. Chúng tôi sẽ liên hệ để xác nhận ngay!`);
-        // Có thể cuộn xuống phần Liên hệ để khách để lại SĐT
-        document.querySelector('#contact-us').scrollIntoView({ behavior: 'smooth' });
-    } else {
-        alert('Vui lòng chọn ít nhất một dịch vụ!');
-    }
-});
-
-// Xử lý cuộn mượt cho thanh điều hướng
-const navLinks = document.querySelector('.topnav').children;
-
-for (const navLink of navLinks) {
-    navLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        const sectionId = navLink.getAttribute('href');
-
-        if (sectionId && sectionId.startsWith('#')) {
-            const target = document.querySelector(sectionId);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
+if (hamburger) {
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
     });
 }
+
+// Close mobile menu when a link is clicked
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}));
+
+// Xử lý chọn dịch vụ bằng cách click (Giữ nguyên logic cũ)
+const serviceCards = document.querySelectorAll('.service-card');
+serviceCards.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('selected');
+    });
+});
+
+// Nút gửi yêu cầu (Giữ nguyên logic cũ)
+const bookNowBtn = document.querySelector('#book-now-btn');
+if (bookNowBtn) {
+    bookNowBtn.addEventListener('click', () => {
+        alert(`Vui lòng nhấn vào biểu tượng Zalo hoặc gọi Hotline ở góc màn hình để gửi yêu cầu cho chúng tôi!`);
+    });
+}
+
+// Xử lý cuộn mượt cho thanh điều hướng mới
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
+    });
+});
 
 // Câu hỏi thường gặp
 const questions = document.querySelectorAll('.question');
