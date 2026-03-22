@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
@@ -15,183 +15,189 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Lato:wght@700&family=Poppins:wght@300&family=Roboto&display=swap"
         rel="stylesheet">
-    <title>Alpha Laundry</title>
+    <title>ThanhTruc - Dịch vụ giặt ủi</title>
 </head>
 
 <body>
     <div class="header">
-        <h1>Alpha Laundry</h1>
+        <h1>ThanhTruc</h1>
         <div class="topnav">
-            <a href="#" id="#how-it-works">How it works</a>
-            <a href="#" id="#alpha-premium">Premium</a>
-            <a href="#" id="#schedule-wash">Schedule Wash</a>
-            <a href="#" id="#join-us">Join Us</a>
-            <a href="#" id="#contact-us">Contact Us</a>
-
+            <a href="#schedule-wash">Dịch vụ & Báo giá</a>
+            <a href="#new-section-1">Phụ kiện</a>
+            <a href="#new-section-2">Thông tin liên hệ</a>
+            <a href="#map">Địa chỉ</a>
         </div>
     </div>
 
     <main>
         <div class="hero">
             <div class="hero-card">
-                <h2>Nairobi's No.1 Laundry Cleaning Choice</h2>
-                <p>A tradition of unsurpassed customer service and unwavering commitment to high quality cleaning and
-                    laundry servives.</p>
-                <button class="sign-up" type="button">Sign Up For Free Pickup & Delivery</button>
+                <h2 class="welcome-text">Welcome & <br><span>Xin chào!</span></h2>
+                <p>ThanhTruc mang đến dịch vụ chăm sóc khách hàng tuyệt vời và cam kết chất lượng giặt ủi tốt nhất cho bạn.</p>
+                <!-- Nút cũ đã được xóa, bạn có thể thêm nội dung khác ở đây -->
             </div>
         </div>
 
-        <div class="how-it-works" id="how-it-works">
-            <h2>How It Works</h2>
-            <div class="workings">
-                <div class="step-one">
-                    <h3>Step 1</h3>
-                    <p>Choose type of garment</p>
-                </div>
-
-                <div class="step-one">
-                    <h3>Step 2</h3>
-                    <p>Enter your phone details</p>
-                </div>
-
-                <div class="step-one">
-                    <h3>Step 3</h3>
-                    <p>Review and Confirm order</p>
-                </div>
-
-                <div class="step-one">
-                    <h3>Step 4</h3>
-                    <p>Make your Payment</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="alpha-premium" id="alpha-premium">
-            <h2>Alpha Premium Laundry</h2>
-            <div class="premium-body">
-                <!-- <img src="./assets/colorful-towels-liquid-laundry-detergent.jpg" alt="laundry picture">
-                 -->
-                <div class="premium-content">
-                    <p>For our <strong>Premium</strong> customers, we offer the following:</p>
-                    <ul>
-                        <li><strong>Priority Scheduling:</strong> Guaranteed earliest time slots for both pickup and
-                            delivery.</li>
-                        <li><strong>Ironing & Garment Steaming:</strong> Guaranteed ironing of your garment so that when
-                            they are delivered, they are ready to wear.</li>
-                        <li><strong>Access to Exclusive Detergents:</strong> Clients can select from a wide range of
-                            detergents to suit their specific preferences.</li>
-                    </ul>
-                    <button id="premium-sign-up" button">Sign Up For Premium</button>
-                </div>
-
-            </div>
-        </div>
-
+        <!-- Phần dịch vụ đưa lên đầu -->
         <div class="schedule-wash" id="schedule-wash">
-            <div class="schedule-form-container">
-                <form action="" id="schedule-form">
-                    <h1 style="text-align: center;">Schedule A Wash</h1>
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your name...">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Your phone number...">
-                    <label for="date">Pickup Date</label>
-                    <input type="date" id="pickup-date">
-                    <label for="garment">Choose Garment</label>
-                    <select name="garment" id="garment" name="garment">
-                        <option value="Jeans">Jeans</option>
-                        <option value="Khaki">Khaki</option>
-                        <option value="Sweatpant">Sweatpant</option>
-                        <option value="short">Short</option>
-                        <option value="hoodie">Hoodie</option>
-                        <option value="Shirt">Shirt</option>
-                        <option value="Jacket">Jacket/Sweater</option>
-                    </select>
-                    <label for="quantity">Quantity</label>
-                    <input type="number" id="quantity" name="quantity">
-                    <button type="submit" id="add-item" style="padding: 10px;font: inherit;">Add Item</button>
-                </form>
-            </div>
-
-            <div class="items">
-                <h2>Your Cart</h2>
-                <div class="name">
-                    <p><strong>Name:</strong> <span>Benny Hinn</span></p>
+            <h1 style="text-align: center; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); width: 100%; margin-top: 50px;">Dịch vụ & Báo giá</h1>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&auto=format" alt="Quần Jeans" class="service-img">
+                    <h3>Quần Jeans</h3>
+                    <p class="price">50.000đ</p>
                 </div>
-                <div class="items-content">
-                    <ol>
-                        <li>Jeans Trouser<span>Ksh.50</span></li>
-                        <li>Shirt<span>Ksh.50</span></li>
-                        <li>Socks<span>Ksh.50</span></li>
-                        <li>Jacket<span>Ksh.50</span></li>
-                        <li>Jeans<span>Ksh.50</span></li>
-                        <li>Jeans<span>Ksh.50</span></li>
-                        <li>Jeans<span>Ksh.50</span></li>
-                        <li>Jeans<span>Ksh.50</span></li>
-                        <li>Jeans<span>Ksh.50</span></li>
-                        <li>Jeans<span>Ksh.50</span></li>
-                        <li>Jeans<span>Ksh.50</span></li>
-                        <li>Jeans<span>Ksh.50</span></li>
-                        <li>Jeans<span>Ksh.50</span></li>
-                        <li>Jeans<span>Ksh.50</span></li>
-                    </ol>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=500&auto=format" alt="Áo Sơ Mi" class="service-img">
+                    <h3>Áo Sơ Mi</h3>
+                    <p class="price">40.000đ</p>
                 </div>
-
-                <button type="submit">Book Now</button>
-            </div>
-            <!-- <img src="./assets/african-american-man-holding-clean-laundry-laundry-powder-making-fish-face-with-mouth-squinting-eyes-crazy-comical.jpg" alt="laundry image 3"> -->
-        </div>
-
-        <div class="join-us" id="join-us">
-            <div class="join-content">
-                <form action="" id="join-us-form">
-                    <h1 style="text-align:center; margin-bottom: 0px;">Join Us</h1>
-                    <p>Would you like to work for us? If so then fill the form below and submit your contacts and we
-                        will reach out soonest!</p>
-                    <label for="fname">Name</label>
-                    <input type="text" name="fname" id="fname" placeholder="Type your first name...">
-                    <label for="phone">Phone Number</label>
-                    <input type="text" name="phone" id="phone" placeholder="Type your phone number...">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Type your phone number...">
-                    <button type="submit">Apply</button>
-                </form>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500&auto=format" alt="Áo Khoác" class="service-img">
+                    <h3>Áo Khoác</h3>
+                    <p class="price">120.000đ</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&auto=format" alt="Áo Thun" class="service-img">
+                    <h3>Áo Thun</h3>
+                    <p class="price">30.000đ</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=500&auto=format" alt="Váy Đầm" class="service-img">
+                    <h3>Váy/Đầm</h3>
+                    <p class="price">60.000đ</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&auto=format" alt="Chăn Mền" class="service-img">
+                    <h3>Chăn Mền</h3>
+                    <p class="price">80.000đ</p>
+                </div>
             </div>
         </div>
 
-        <div class="contact-us" id="contact-us">
-            <form action="" id="contact-form">
-                <h1 style="text-align: center; margin-bottom: 0;">Contact Us</h1>
-                <p>Please feel free to reach out to us anytime. We always want to hear from you.</p>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name...">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" pattern="0?\d{3}-\d{3}-\d{4}"
-                    placeholder="Your phone number...">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-                <label for="message">Message</label>
-                <textarea name="contact-message" id="contact-message" cols="30" rows="5"></textarea>
-                <button type="submit">Book Now</button>
-            </form>
+        <!-- Cửa hàng phụ kiện (Thay cho Nội dung mới 1) -->
+        <div class="shop-section" id="new-section-1">
+            <h1 style="text-align: center; margin-top: 50px;">Phụ kiện & Nước giặt</h1>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">Cung cấp các sản phẩm chăm sóc quần áo chất lượng cao.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-tag">Bán chạy</div>
+                    <img src="https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?w=500&auto=format" alt="Nước giặt">
+                    <h3>Nước giặt Downy</h3>
+                    <p class="product-price">185.000đ</p>
+                    <button class="buy-btn">Xem chi tiết</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&auto=format" alt="Móc phơi" class="product-img-fix">
+                    <h3>Bộ 10 móc phơi nhôm</h3>
+                    <p class="product-price">45.000đ</p>
+                    <button class="buy-btn">Xem chi tiết</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=500&auto=format" alt="Kẹp quần áo">
+                    <h3>Túi kẹp nhựa (20 cái)</h3>
+                    <p class="product-price">25.000đ</p>
+                    <button class="buy-btn">Xem chi tiết</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=500&auto=format" alt="Nước xả">
+                    <h3>Nước xả vải Comfort</h3>
+                    <p class="product-price">160.000đ</p>
+                    <button class="buy-btn">Xem chi tiết</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thông tin doanh nghiệp (Thay cho Nội dung mới 2) -->
+        <div class="alpha-premium" id="new-section-2">
+            <div class="info-container">
+                <h2 class="info-title">ThanhTruc Laundry</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div class="info-text">
+                            <strong>Địa chỉ:</strong><br>
+                            123 Đường Lê Lợi, Phường Bến Thành, Quận 1, TP. HCM
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🌐</span>
+                        <div class="info-text">
+                            <strong>Website:</strong><br>
+                            www.thanhtruclaundry.com
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🏢</span>
+                        <div class="info-text">
+                            <strong>Dịch vụ doanh nghiệp:</strong><br>
+                            Corporate Laundry Service (Giặt ủi cho khối văn phòng, khách sạn)
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🔵</span>
+                        <div class="info-text">
+                            <strong>Facebook:</strong><br>
+                            facebook.com/ThanhTrucLaundry
+                        </div>
+                    </div>
+                    <div class="info-item highlight">
+                        <span class="info-icon">⭐</span>
+                        <div class="info-text">
+                            <strong>Laundry Near me at:</strong><br>
+                            Tiệm giặt ủi gần bạn nhất tại khu vực Quận 1
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="faq">
-            <h1>Frequently Asked Questions</h1>
+            <h1>Câu hỏi thường gặp</h1>
             <div class="accordion">
-                <div class="question">How do I get started?</div>
-                <div class="answer">To Get started simply sign up to our website.</div>
+                <div class="question">Làm sao để bắt đầu?</div>
+                <div class="answer">Chỉ cần chọn dịch vụ và liên hệ với chúng tôi qua Zalo/SĐT.</div>
 
-                <div class="question">How do I get started?</div>
-                <div class="answer">To Get started simply sign up to our website.</div>
-
-                <div class="question">How do I get started?</div>
-                <div class="answer">To Get started simply sign up to our website.</div>
+                <div class="question">Quy trình giặt như thế nào?</div>
+                <div class="answer">Chúng tôi nhận đồ, giặt, sấy và giao tận nơi.</div>
             </div>
         </div>
+
+        <div class="contact-floating">
+            <a href="https://facebook.com" target="_blank" class="contact-btn facebook">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+                <span>Facebook</span>
+            </a>
+
+            <a href="https://zalo.me/0123456789" target="_blank" class="contact-btn zalo">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png">
+                <span>Zalo Chat</span>
+            </a>
+
+            <a href="tel:0123456789" class="contact-btn phone">
+                <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png">
+                <span>Gọi ngay</span>
+            </a>
+        </div>
+
+        <div class="google-map" id="map">
+            <h1 style="text-align: center;">Địa chỉ của chúng tôi</h1>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.485180410055!2d106.69634737573587!3d10.774100259223126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f39226e6371%3A0xc0f1a44e59f48f4a!2zQ2jhu6MgQuG6v24gVGjDoG5o!5e0!3m2!1svi!2s!4v1711099238318!5m2!1svi!2s" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
     </main>
 
-    <footer>All Rights Reserved 2023 | Alpha Laundry Services</footer>
+    <footer>Bản quyền © 2023 | ThanhTruc Services</footer>
     <script src="index.js"></script>
 </body>
 

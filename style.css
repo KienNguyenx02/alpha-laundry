@@ -56,22 +56,39 @@ h1, h2, h3, h4{
     align-items: center;
 }
 
-.hero-card{
-    padding: 20px;
-    width: 700px;
-    height: 350px;
+.hero-card {
+    padding: 40px;
+    width: 600px;
+    height: auto;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-top: 5px solid #008080;
 }
 
-.hero-card h2{
-    font-size: 40px;
-    margin-bottom: 5px;
+.welcome-text {
+    font-size: 55px !important;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: #333 !important;
+    font-family: 'Josefin Sans', sans-serif !important;
+    font-weight: 300;
 }
 
-.hero-card p{
-    line-height: 1.5;
-    padding-bottom: 10px;
+.welcome-text span {
+    font-weight: 700;
+    color: #008080;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-card p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 450px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
 }
 
 .hero-card button{
@@ -115,34 +132,153 @@ div{
   font: inherit;
 }
 
+.shop-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-tag {
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: #e74c3c;
+    color: white;
+    padding: 5px 40px;
+    font-size: 12px;
+    transform: rotate(45deg);
+    font-weight: bold;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: #e67e22;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #008080;
+    background: transparent;
+    color: #008080;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: #008080;
+    color: white;
+}
+
 .alpha-premium {
-    background-image: url(./assets/man-sticks-head-through-multicolored-laundry-poses-through-washing-machine-drum-with-bottle-detergent.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(./assets/man-sticks-head-through-multicolored-laundry-poses-through-washing-machine-drum-with-bottle-detergent.jpg);
     background-size: cover;
-    padding: 50px;
-    height: 800px;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 20px;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.alpha-premium h2{
+.info-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 900px;
+}
+
+.info-title {
     text-align: center;
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-bottom: 30px;
+    color: #008080;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.premium-content{
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.info-item {
     display: flex;
-    flex-direction: column;
-    padding: 50px;
-    line-height: 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    float: right;
-    width: 550px;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-.premium-body button{
+.info-item:hover {
+    background: #f0f8f8;
+}
+
+.info-icon {
+    font-size: 1.8rem;
+    background: #e6f2f2;
     padding: 10px;
-    font: inherit;
-    margin-left: 40px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-text {
+    line-height: 1.6;
+    color: #444;
+}
+
+.info-item.highlight {
+    background: #fff8e1;
+    grid-column: 1 / -1;
+    border: 2px dashed #ffc107;
+}
+
+.info-item.highlight .info-icon {
+    background: #ffecb3;
 }
 
 #schedule-form, #contact-form, #join-us-form{
@@ -169,58 +305,119 @@ textarea{
     font: inherit;
 }
 
-.schedule-wash, .join-us, .contact-us{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 700px;  
+.schedule-wash {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(./assets/big-pile-clothes-white-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: auto;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#contact-form, #join-us-form, #schedule-form{
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  font: inherit;
-  padding: 10px;
-  margin-bottom: 10px;
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
 }
 
-.schedule-wash{
-  background-image: url(./assets/big-pile-clothes-white-background.jpg);
-  background-size: cover;
-  height: 800px;
+.service-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 3px solid transparent;
 }
 
-.schedule-wash img{
-  width: 50%;
-  margin: 0;
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border-color: #008080;
 }
 
-.items{
-  background: rgba(255, 255, 255, 0.8);
-  height: 415px;
-  width: 300px;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-
+.service-card.selected {
+    border-color: #28a745;
+    background: #e9f7ef;
 }
 
-.items-content{
-  font: inherit;
-  overflow: auto;
-  max-height: 240px;
+.service-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.items-content ol{
-  margin: 0;
+.service-card h3 {
+    margin: 10px 0;
+    color: #333;
+    font-size: 1.4rem;
 }
 
+.price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #008080;
+    margin-bottom: 5px;
+}
 
-.items button{
-  padding: 10px;
-  font: inherit;
-  width: 100%;
+.select-btn {
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+    background: #008080;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.service-card.selected .select-btn {
+    background: #28a745;
+}
+
+.selection-summary {
+    margin-top: 50px;
+    background: white;
+    padding: 20px 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.selection-summary p {
+    font-weight: bold;
+    margin: 0;
+}
+
+#book-now-btn {
+    padding: 12px 30px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#book-now-btn:hover {
+    transform: scale(1.05);
+    background: #218838;
+}
+
+/* Xóa bỏ các style cũ không còn dùng */
+.items, .schedule-form-container {
+    display: none;
 }
 
 .join-us{
@@ -244,6 +441,19 @@ textarea{
   margin: 20px auto;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.google-map {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.map-container {
+    border: 5px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .accordion{
@@ -343,3 +553,178 @@ footer{
     }
   }
   
+
+    * {
+      box-sizing: border-box;
+  }
+
+  body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+  }
+
+  .header {
+      text-align: center;
+      padding: 10px;
+  }
+
+  .topnav a {
+      margin: 0 10px;
+      text-decoration: none;
+  }
+
+  .hero {
+      height: 400px;
+      background: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .hero-card {
+      background: rgba(255,255,255,0.8);
+      padding: 20px;
+      text-align: center;
+  }
+
+  .how-it-works {
+      padding: 40px;
+      text-align: center;
+  }
+
+  .workings {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+  }
+
+  .step-one {
+      background: #f5f5f5;
+      padding: 20px;
+      width: 200px;
+  }
+
+  .contact-us {
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+  }
+
+  form {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      gap: 10px;
+  }
+
+  footer {
+      text-align: center;
+      padding: 10px;
+  }
+
+  /* ===== NÚT LIÊN HỆ NỔI ĐỘNG ===== */
+
+  .contact-floating {
+      position: fixed;
+      left: 30px;
+      bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 9999;
+  }
+
+  .contact-btn {
+      width: 55px;
+      height: 55px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 14px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+  }
+
+  .contact-btn img {
+      width: 27px;
+      height: 27px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+  }
+
+  .contact-btn span {
+      opacity: 0;
+      max-width: 0;
+      margin-left: 0;
+      transition: all 0.4s ease;
+      font-family: 'Roboto', sans-serif;
+  }
+
+  /* Hiệu ứng Hover */
+  .contact-btn:hover {
+      width: 150px;
+      border-radius: 30px;
+  }
+
+  .contact-btn:hover span {
+      opacity: 1;
+      max-width: 100px;
+      margin-left: 10px;
+  }
+
+  .contact-btn:hover img {
+      transform: rotate(360deg);
+  }
+
+  /* Màu sắc & Gradients */
+  .facebook {
+      background: linear-gradient(135deg, #1877f2, #0d59c1);
+  }
+
+  .zalo {
+      background: linear-gradient(135deg, #008fe5, #005ea1);
+  }
+
+  .phone {
+      background: linear-gradient(135deg, #28a745, #1e7e34);
+      animation: pulse-green 2s infinite;
+  }
+
+  /* Hiệu ứng nhịp đập (Pulse) */
+  @keyframes pulse-green {
+      0% {
+          box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+      }
+      70% {
+          box-shadow: 0 0 0 15px rgba(40, 167, 69, 0);
+      }
+      100% {
+          box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+      }
+  }
+
+  /* Responsive di động */
+  @media only screen and (max-width: 768px) {
+      .contact-floating {
+          left: 15px;
+          bottom: 30px;
+      }
+      .contact-btn {
+          width: 50px;
+          height: 50px;
+      }
+      .contact-btn:hover {
+          width: 50px; /* Không mở rộng trên mobile để tránh che nội dung */
+      }
+      .contact-btn span {
+          display: none;
+      }
+  }
