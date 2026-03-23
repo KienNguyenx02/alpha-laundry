@@ -22,21 +22,62 @@ body{
     transition: all 0.3s ease;
 }
 
+.top-bar {
+    background-color: #008080;
+    color: white;
+    padding: 8px 0;
+    font-size: 0.9rem;
+}
+
+.top-bar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.top-info {
+    display: flex;
+    gap: 20px;
+}
+
+.top-info a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s;
+}
+
+.top-info a:hover {
+    opacity: 0.8;
+}
+
 .navbar {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 15px 25px;
+    padding: 10px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo a {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #333;
     text-decoration: none;
     font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    color: #008080;
+    font-size: 2rem;
 }
 
 .logo span {
@@ -257,24 +298,285 @@ div{
     font-size: 1.2rem;
     color: #e67e22;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 10px 0 5px;
 }
 
-.buy-btn {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #008080;
-    background: transparent;
-    color: #008080;
-    border-radius: 5px;
-    cursor: pointer;
+.product-desc {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.see-more-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.see-more-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #008080;
+    color: white;
+    text-decoration: none;
     font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 128, 128, 0.3);
+}
+
+.see-more-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+.see-more-btn:hover {
+    background-color: #006666;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 128, 128, 0.4);
+}
+
+.see-more-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* ===== BACK BUTTON ===== */
+.back-nav {
+    margin: 20px 0 0 10px;
+    padding: 0;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #008080;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background: #e6f2f2;
+}
+
+.back-btn:hover {
+    background: #008080;
+    color: white;
+    transform: translateX(-5px);
+}
+
+/* ===== NEWS PAGE STYLES ===== */
+.news-hero {
+    background: linear-gradient(rgba(0,128,128,0.8), rgba(0,128,128,0.8)), url('https://images.unsplash.com/photo-1545173153-29497e641773?w=1200&auto=format');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.news-hero h1 {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.news-hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.news-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.news-img-wrapper {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+}
+
+.news-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.news-card:hover .news-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.news-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #008080;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.news-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.news-date i {
+    margin-right: 5px;
+}
+
+.news-card h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.news-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.read-more {
+    color: #008080;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     transition: 0.3s;
 }
 
-.buy-btn:hover {
-    background: #008080;
+.read-more:hover {
+    gap: 15px;
+}
+
+/* ===== PROMOTIONS SECTION ===== */
+.promo-banner {
+    padding: 100px 20px 60px;
+    background: linear-gradient(135deg, #f0f8f8 0%, #ffffff 100%);
+    text-align: center;
+}
+
+.promo-banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.promo-banner h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #008080;
+    border-radius: 2px;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.promo-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.promo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.promo-card i {
+    font-size: 3rem;
+    color: #008080;
+    margin-bottom: 20px;
+}
+
+.promo-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.promo-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.promo-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #e67e22;
     color: white;
+    padding: 5px 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-bottom-right-radius: 15px;
+}
+
+.promo-code {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #e6f2f2;
+    color: #008080;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px dashed #008080;
 }
 
 .alpha-premium {
@@ -551,6 +853,51 @@ textarea{
 
 .answer.active{
   display: block;
+}
+
+/* ===== WHY CHOOSE US SECTION ===== */
+.why-choose-us {
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.why-card {
+    padding: 30px;
+    text-align: center;
+    background: #fdfdfd;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border-bottom: 4px solid #008080;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.why-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.why-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.why-card p {
+    color: #666;
+    line-height: 1.6;
 }
 
 footer{
