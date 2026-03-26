@@ -122,6 +122,24 @@ body{
     width: 100%;
 }
 
+.nav-link-btn {
+    text-decoration: none;
+    color: white !important;
+    background-color: #28a745;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+.nav-link-btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+}
+
 /* Hamburger menu cho mobile */
 .hamburger {
     display: none;

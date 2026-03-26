@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Đặt lịch dịch vụ - ThanhTruc Laundry</title>
+    <style>
+        body { background-color: #f4f7f6; }
+        
+        /* Nút quay lại góc trên bên trái */
+        .back-to-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+        }
+        .back-to-home a {
+            text-decoration: none;
+            color: #008080;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .back-to-home a:hover {
+            background: #008080;
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .booking-page-container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        /* Phần chọn dịch vụ bên trái */
+        .services-selection {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .services-selection h2 { margin-bottom: 25px; color: #333; }
+        .booking-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        /* Custom scrollbar */
+        .booking-services-grid::-webkit-scrollbar { width: 6px; }
+        .booking-services-grid::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+
+        .service-item {
+            border: 2px solid #eee;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .service-item img { width: 100%; height: 100px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+        .service-item h4 { margin: 5px 0; font-size: 1rem; color: #444; }
+        .service-item .price { color: #008080; font-weight: bold; font-size: 0.9rem; }
+        .service-item.active { border-color: #28a745; background: #f0fff4; box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2); }
+
+        /* Phần Form bên phải */
+        .booking-form-side {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            border-top: 5px solid #008080;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
+        .form-group input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+        .selected-badge {
+            background: #e6f2f2;
+            color: #008080;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+        .submit-btn {
+            width: 100%; padding: 15px; background: #28a745; color: white;
+            border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold;
+            cursor: pointer; transition: 0.3s;
+        }
+        .submit-btn:hover { background: #218838; }
+
+        @media (max-width: 900px) {
+            .booking-page-container { grid-template-columns: 1fr; }
+            .booking-form-side { position: static; }
+        }
+    </style>
+</head>
+<body>
+    <div class="back-to-home">
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Trở về Trang chủ</a>
+    </div>
+
+    <main class="booking-page-container">
+        <!-- Bên trái: Danh sách dịch vụ -->
+        <section class="services-selection">
+            <h2>1. Chọn dịch vụ giặt ủi</h2>
+            <div class="booking-services-grid" id="services-grid">
+                <!-- Sẽ được render tự động -->
+            </div>
+        </section>
+
+        <!-- Bên phải: Form thông tin -->
+        <section class="booking-form-side">
+            <h2 style="margin-bottom: 10px;">2. Thông tin liên hệ</h2>
+            <p style="color: #666; margin-bottom: 25px;">Điền thông tin để chúng tôi phục vụ bạn tốt nhất.</p>
+            
+            <div class="selected-badge">
+                <span>Dịch vụ:</span>
+                <select id="service-select" style="background: white; border: 1px solid #008080; border-radius: 5px; color: #008080; font-weight: bold; padding: 5px 10px; cursor: pointer; outline: none; font-size: 1rem;">
+                    <option value="">-- Chọn dịch vụ --</option>
+                    <!-- Sẽ được render tự động -->
+                </select>
+            </div>
+
+            <form id="booking-form">
+                <div class="form-group">
+                    <label>Họ và tên *</label>
+                    <input type="text" id="name" placeholder="Nguyễn Văn A" required>
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại *</label>
+                    <input type="tel" id="phone" placeholder="090 123 4567" required>
+                </div>
+                <button type="submit" class="submit-btn">Xác nhận đặt lịch ngay</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="booking.js"></script>
+</body>
+</html>

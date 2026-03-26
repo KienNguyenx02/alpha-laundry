@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Quản lý đơn hàng - ThanhTruc Admin</title>
+    <style>
+        .admin-container { max-width: 1000px; margin: 50px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background-color: #008080; color: white; }
+        .delete-btn { background: #e74c3c; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+        .delete-btn:hover { background: #c0392b; }
+        .refresh-btn { background: #008080; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><i class="fas fa-soap"></i> Thanh<span>Truc Admin</span></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                <li><button onclick="logout()" style="background: #e74c3c; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-left: 10px;">Đăng xuất</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <div class="admin-container">
+            <h1>Danh sách đơn hàng mới</h1>
+            <button class="refresh-btn" onclick="fetchOrders()"><i class="fas fa-sync"></i> Làm mới danh sách</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ngày đặt</th>
+                        <th>Khách hàng</th>
+                        <th>Số điện thoại</th>
+                        <th>Dịch vụ</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="orders-table-body">
+                    <!-- Dữ liệu sẽ được chèn vào đây bằng JS -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

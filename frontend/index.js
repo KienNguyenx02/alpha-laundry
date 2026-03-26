@@ -15,23 +15,18 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
     navMenu.classList.remove("active");
 }));
 
-// Xử lý chọn dịch vụ bằng cách click (Giữ nguyên logic cũ)
+// Xử lý chọn dịch vụ và chuyển sang trang Booking riêng
 const serviceCards = document.querySelectorAll('.service-card');
+
 serviceCards.forEach(card => {
     card.addEventListener('click', () => {
-        card.classList.toggle('selected');
+        const serviceName = card.getAttribute('data-service');
+        // Chuyển hướng sang trang booking.html với tham số tên dịch vụ
+        window.location.href = `booking.html?service=${encodeURIComponent(serviceName)}`;
     });
 });
 
-// Nút gửi yêu cầu (Giữ nguyên logic cũ)
-const bookNowBtn = document.querySelector('#book-now-btn');
-if (bookNowBtn) {
-    bookNowBtn.addEventListener('click', () => {
-        alert(`Vui lòng nhấn vào biểu tượng Zalo hoặc gọi Hotline ở góc màn hình để gửi yêu cầu cho chúng tôi!`);
-    });
-}
-
-// Xử lý cuộn mượt cho thanh điều hướng mới
+// Xử lý cuộn mượt cho thanh điều hướng
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
